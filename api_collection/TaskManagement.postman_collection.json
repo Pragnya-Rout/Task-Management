@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "075469f8-3a70-432a-a2ab-1c83e36579c5",
+		"name": "TaskManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Client-Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "id",
+								"value": "hjyth",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "344",
+								"type": "text"
+							},
+							{
+								"key": "usertype",
+								"value": "client",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create-Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "123",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{client_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"valr\",\"description\":\"4544\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/task-creations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task-creations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit-Task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "hjyth",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"valr\",\"description\":\"4544\",\"task_id\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/edit-task",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"edit-task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client-Log-out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{client_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/log-out",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"log-out"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register-Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"client_id\":\"hjyth\",\"password\":\"344\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register-client",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register-client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task-Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client_id",
+								"value": "hjyth",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{client_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/task-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Employee-Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "id",
+								"value": "JJJ",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "11",
+								"type": "text"
+							},
+							{
+								"key": "usertype",
+								"value": "employee",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.69.230:5555/login",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"69",
+								"230"
+							],
+							"port": "5555",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete-Task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "employee_id",
+								"value": "JJJ",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{emp_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complete-task/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complete-task",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee-Log-Out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{emp_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/log-out",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"log-out"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register-Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"employee_id\":\"hjyth\",\"password\":\"344\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register-employee",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register-employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "Manager-Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "id",
+								"value": "12",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "12",
+								"type": "text"
+							},
+							{
+								"key": "usertype",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign-Task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "manager_id",
+								"value": "12",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{manager_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"employee_id\":\"valr\",\"description\":\"4544\",\"task_id\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/assigne-task",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"assigne-task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "manager_id",
+								"value": "12",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{manager_access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/delete-task/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"delete-task",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manager-logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{manager_access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/log-out",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"log-out"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register-Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"manager_id\":\"hjyth\",\"password\":\"344\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register-manager",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register-manager"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
